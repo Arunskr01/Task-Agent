@@ -1,0 +1,14 @@
+Extract headers: Bill of lading No, Shipper, Consignee, Notify Party 1, Notify Party 2, Delivery Agent, Client reference number, Pre Carriage location, Pre Carriage By, Port of Loading, Port of discharge, Final Destination, Freight Status, No of Original Bs/L, No of Copies Bs/L, Freight Payable at, Remarks, Delivery Date
+Extract the following tables:
+Table "Table 1": [Marks and Nos, No of Packages, Package Type, Goods Description, Weight (kgs), Weight (lbs), Weight Type, Volume (m3), Volume (ft3), HS Code, Special Dimension]
+
+The user has provided the following TARGETED CORRECTIONS for specific fields. You MUST apply these specific rules strictly to the named fields:
+Field 'Shipper': Can be labeled as exporter
+Field 'Delivery Agent': Can be labeled as Forwarding Agent.
+Field 'Port of Loading': Can be labeled as Port of export.
+Field 'Port of discharge': Can be labeled as Port of Arrival
+Field 'Final Destination': Can be aslo labeled as Place of Delivery. Do not extract any port. If not found return NULL.
+Field 'Freight Status': Return either Collect or Prepaid. If can't find value or not sure about the value extracted then keep as NULL.
+Field 'Remarks': Special Instruction
+Table 'Table 1' Column 'Weight Type': Extract if Tare or Gross or Net. If not defined then return NULL.
+Field 'Freight Status': For this field, extract ONLY the page number where the value exists. Return the page number as an integer (e.g. 1, 2, 3).

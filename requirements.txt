@@ -1,0 +1,14 @@
+PyMuPDF
+python-bidi
+pandas
+openpyxl
+xlrd
+PyPDF2
+Pillow
+msrest
+azure-cognitiveservices-vision-computervision
+urllib3
+pdfplumber
+reportlab
+pypandoc
+numpy
